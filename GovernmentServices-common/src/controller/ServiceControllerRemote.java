@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package models;
+package controller;
 
+import entitites.ServiceUser;
 import javax.ejb.Remote;
 
 /**
@@ -12,6 +13,8 @@ import javax.ejb.Remote;
  * @author Zaeem
  */
 @Remote
-public interface SessionBeanRemote {
-    
+public interface ServiceControllerRemote {
+    void businessMethod();    
+
+    void addUser(ServiceUser parameter);
 }

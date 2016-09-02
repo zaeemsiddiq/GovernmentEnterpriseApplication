@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
+package entitites;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -15,7 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -23,7 +23,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "Service")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Service.findAll", query = "SELECT s FROM Service s"),
     @NamedQuery(name = "Service.findByServiceId", query = "SELECT s FROM Service s WHERE s.serviceId = :serviceId"),
@@ -39,12 +38,15 @@ public class Service implements Serializable {
     @Basic(optional = false)
     @Column(name = "SERVICE_ID")
     private Integer serviceId;
+    @Size(max = 20)
     @Column(name = "SERVICE_NAME")
     private String serviceName;
     @Column(name = "TYPE")
     private Integer type;
+    @Size(max = 100)
     @Column(name = "THUMBNAIL")
     private String thumbnail;
+    @Size(max = 250)
     @Column(name = "DESCRIPTION")
     private String description;
 
@@ -117,7 +119,7 @@ public class Service implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Service[ serviceId=" + serviceId + " ]";
+        return "entitites.Service[ serviceId=" + serviceId + " ]";
     }
     
 }
