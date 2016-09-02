@@ -1,1 +1,1 @@
-# EnterpriseApplication
+# Java EnterpriseApplication
