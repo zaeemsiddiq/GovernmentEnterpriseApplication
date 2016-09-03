@@ -8,7 +8,7 @@
             <web-module-libraries/>
             <web-module-additional-libraries>
                 <library>
-                    <file>${reference.GovernmentServices-war.dist-ear}</file>
+                    <file>${reference.GovernmentServices-appclient.j2ee-module-car}</file>
                     <path-in-war>/</path-in-war>
                 </library>
                 <library>
@@ -16,11 +16,7 @@
                     <path-in-war>/</path-in-war>
                 </library>
                 <library>
-                    <file>${reference.GovernmentServices_AppClient.j2ee-module-car}</file>
-                    <path-in-war>/</path-in-war>
-                </library>
-                <library>
-                    <file>${reference.GovernmentServices-appclient.j2ee-module-car}</file>
+                    <file>${reference.GovernmentServices-war.dist-ear}</file>
                     <path-in-war>/</path-in-war>
                 </library>
             </web-module-additional-libraries>
@@ -49,14 +45,6 @@
                 <target>dist-ear</target>
                 <clean-target>clean-ear</clean-target>
                 <id>dist-ear</id>
-            </reference>
-            <reference>
-                <foreign-project>GovernmentServices_AppClient</foreign-project>
-                <artifact-type>j2ee_ear_archive</artifact-type>
-                <script>build.xml</script>
-                <target>dist-ear</target>
-                <clean-target>clean-ear</clean-target>
-                <id>j2ee-module-car</id>
             </reference>
         </references>
     </configuration>

@@ -6,7 +6,7 @@
 package governmentservices_appclient;
 
 import controller.ServiceControllerRemote;
-import entitites.ServiceUser;
+import entities.ServiceUser;
 import javax.ejb.EJB;
 
 /**
@@ -22,19 +22,8 @@ public class Main {
     private static ServiceControllerRemote service;
 
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        ServiceUser u = new ServiceUser();
-        u.setLastName("lastName");
-        u.setAddress("address");
-        u.setFirstName("firstName");
-        u.setPassword("password");
-        u.setPhone("123123");
-        u.setType(1); 
-        u.setUserid(101);
-        
+        // TODO code application logic here        
         service.businessMethod();
-        service.addUser(u);
         System.out.println("App client is up and running now");
     }
 

@@ -5,7 +5,8 @@
  */
 package controller;
 
-import entitites.ServiceUser;
+import entities.Service;
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -14,7 +15,9 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface ServiceControllerRemote {
-    void businessMethod();    
 
-    void addUser(ServiceUser parameter);
+    void businessMethod();
+
+    List<Service> getAllServices();
+    
 }

@@ -3,9 +3,7 @@
   <persistence-unit name="GovernmentServices-commonPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entities.Service</class>
-    <class>entities.User</class>
-    <class>entitites.Service</class>
-    <class>entitites.ServiceUser</class>
+    <class>entities.ServiceUser</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/GovernmentEnterpriseApplication"/>
       <property name="javax.persistence.jdbc.password" value="S27127664"/>
