@@ -6,7 +6,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Add Service</title>
     </h:head>
     <f:facet name="middle">
         <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
@@ -66,11 +66,11 @@
                             <ul class="list-inline">
                                 <li>
                                     <label>Service Number</label>
-                                    <h:inputText class="form-control" value="#{serviceController.serviceNumber}"></h:inputText>                                    
+                                    <h:inputText class="form-control" value="#{indexController.serviceNumber}"></h:inputText>                                    
                                 </li>
                                 <li>
                                     <label>Service Name</label>
-                                    <h:inputText class="form-control" value="#{serviceController.serviceName}"></h:inputText>
+                                    <h:inputText class="form-control" value="#{indexController.serviceName}"></h:inputText>
                                 </li>                                
                                 <li>
                                     <label for="sel1">Service Type:</label>
@@ -82,7 +82,7 @@
                                     </select> 
                                 </li>
                                 <li>
-                                    <h:commandButton class="btn btn-default" value="Search" action="#{serviceController.post()}">                            
+                                    <h:commandButton class="btn btn-default" value="Search" action="#{indexController.post()}">                            
                                     </h:commandButton>
                                 </li>
 
@@ -102,16 +102,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <ui:repeat value="#{serviceController.getServices()}" var="service" varStatus="status" >
+                            <ui:repeat value="#{indexController.getServices()}" var="service" varStatus="status" >
                                 <tr>
                                     <td>
-                                        <h:link value="#{service.serviceNo}" outcome="viewService">
+                                        <h:link value="#{service.serviceNo}" outcome="form" style='#{status.odd?"color:red":"color:green"}'>
                                             <f:param name="serviceID" value="#{status.index + 1}"></f:param>
                                         </h:link> 
                                     </td>
 
                                     <td>
-                                        <h:link value="#{service.serviceName}" outcome="viewService">
+                                        <h:link value="#{service.serviceName}" outcome="form" style='#{status.odd?"color:red":"color:green"}'>
                                             <f:param name="serviceID" value="#{status.index + 1}"></f:param>
                                         </h:link> 
                                     </td>

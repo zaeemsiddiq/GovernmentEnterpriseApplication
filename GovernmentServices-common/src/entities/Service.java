@@ -23,15 +23,17 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(name = Service.GET_ALL,
             query = "SELECT s FROM Service s "),
-    @NamedQuery(name = Service.GET_BY_NAME,
-            query = "SELECT s FROM Service s where s.ServiceName = :serviceName"),
-    @NamedQuery(name = Service.GET_BY_TYPE,
-            query = "SELECT s FROM Service s where s.Type = :serviceType")})
+    @NamedQuery(name = Service.GET_BY_FILTERS,
+            query = "SELECT s FROM Service s where s.ServiceName like :serviceName or s.ServiceNo = :serviceNo or s.Type = :serviceType"),
+    @NamedQuery(name = Service.GET_BY_ID,
+            query = "SELECT s FROM Service s where s.ServiceNo = :serviceNo")
+    
+})
 public class Service implements Serializable {
 
     public static final String GET_ALL = "Service.getAll";
-    public static final String GET_BY_NAME = "Service.getByName";
-    public static final String GET_BY_TYPE = "Service.getByType";
+    public static final String GET_BY_ID = "Service.getById";
+    public static final String GET_BY_FILTERS = "Service.getByFilters";
 
     @Id
     @Column(name = "ServiceNo")

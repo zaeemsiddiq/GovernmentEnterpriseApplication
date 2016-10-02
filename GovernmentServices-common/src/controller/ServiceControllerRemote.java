@@ -19,5 +19,13 @@ public interface ServiceControllerRemote {
     void businessMethod();
 
     List<Service> getAllServices();
+
+    List<Service> searchServices(String serviceNumber, String serviceName, String serviceType);
+
+    void addService(Service service);
+
+    void editService(Service service);
+
+    Service getServiceById(int serviceNumber);
     
 }

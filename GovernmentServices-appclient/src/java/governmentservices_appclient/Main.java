@@ -7,6 +7,7 @@ package governmentservices_appclient;
 
 import controller.ServiceControllerRemote;
 import entities.ServiceUser;
+import gui.serviceList;
 import javax.ejb.EJB;
 
 /**
@@ -18,13 +19,20 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    @EJB
-    private static ServiceControllerRemote service;
+    //@EJB
+    //private static ServiceControllerRemote service;
 
     public static void main(String[] args) {
         // TODO code application logic here        
-        service.businessMethod();
+        //service.businessMethod();
         System.out.println("App client is up and running now");
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new serviceList().setVisible(true);
+            }
+        });
     }
 
 }
